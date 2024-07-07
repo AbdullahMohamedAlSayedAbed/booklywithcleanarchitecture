@@ -1,3 +1,4 @@
+import 'package:booklywithcleanarchitecture/Features/home/presentation/views/home_view.dart';
 import 'package:booklywithcleanarchitecture/Features/splash/presention/views/splash_view.dart';
 import 'package:booklywithcleanarchitecture/core/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,12 @@ final GoRouter _router = GoRouter(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
         return const SplashView();
+      },
+    ),
+    GoRoute(
+      path: '/homeView',
+      builder: (BuildContext context, GoRouterState state) {
+        return const HomeView();
       },
     ),
   ],
