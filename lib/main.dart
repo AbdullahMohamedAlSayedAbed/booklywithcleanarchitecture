@@ -1,9 +1,7 @@
-import 'package:booklywithcleanarchitecture/Features/home/presentation/views/home_view.dart';
-import 'package:booklywithcleanarchitecture/Features/splash/presention/views/splash_view.dart';
+import 'package:booklywithcleanarchitecture/core/utils/app_router.dart';
 import 'package:booklywithcleanarchitecture/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -22,24 +20,8 @@ class BooklyApplication extends StatelessWidget {
         textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)
       ),
       debugShowCheckedModeBanner: false,
-      routerConfig: _router,
+      routerConfig: AppRouter.router,
     );
   }
 }
 
-final GoRouter _router = GoRouter(
-  routes: <RouteBase>[
-    GoRoute(
-      path: '/',
-      builder: (BuildContext context, GoRouterState state) {
-        return const SplashView();
-      },
-    ),
-    GoRoute(
-      path: '/homeView',
-      builder: (BuildContext context, GoRouterState state) {
-        return const HomeView();
-      },
-    ),
-  ],
-);

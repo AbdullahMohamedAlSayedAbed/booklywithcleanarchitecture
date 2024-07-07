@@ -1,3 +1,4 @@
+import 'package:booklywithcleanarchitecture/core/utils/app_router.dart';
 import 'package:booklywithcleanarchitecture/core/utils/assets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -58,7 +59,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     return Future.delayed(
     const Duration(seconds: 2),
     () {
-      GoRouter.of(context).pushReplacement('/homeView');
+      GoRouter.of(context).pushReplacement(AppRouter.homeView);
     },
   );
   }
