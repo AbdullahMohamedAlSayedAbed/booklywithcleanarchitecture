@@ -13,7 +13,7 @@ class BestSellerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).push(AppRouter.bookDetailsView),
+      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsView),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         height: 110,
@@ -30,14 +30,15 @@ class BestSellerItem extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: Styles.style20),
                   const SizedBox(height: 3),
-                  const Text('J.K. Rowling', maxLines: 1, style: Styles.style14),
+                  const Text('J.K. Rowling',
+                      maxLines: 1, style: Styles.style14),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         '19.99 €',
-                        style:
-                            Styles.style20.copyWith(fontWeight: FontWeight.bold),
+                        style: Styles.style20
+                            .copyWith(fontWeight: FontWeight.bold),
                       ),
                       const BookRating(),
                     ],

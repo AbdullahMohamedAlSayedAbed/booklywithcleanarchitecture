@@ -8,16 +8,17 @@ class CustomImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).push(AppRouter.bookDetailsView),
+      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsView),
       child: AspectRatio(
-        aspectRatio: 2.7/4,
+        aspectRatio: 2.7 / 4,
         child: ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Container(
               decoration: const BoxDecoration(
-                color: Colors.amber,
-                  image:
-                      DecorationImage(image: AssetImage('assets/images/test.png'),fit: BoxFit.fill)),
+                  color: Colors.amber,
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/test.png'),
+                      fit: BoxFit.fill)),
             )),
       ),
     );

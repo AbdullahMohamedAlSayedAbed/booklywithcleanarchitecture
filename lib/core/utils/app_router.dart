@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
-  static const homeView = '/homeView';
-  static const bookDetailsView = '/bookDetailsView';
- static final GoRouter router = GoRouter(
+  static const kHomeView = '/homeView';
+  static const kBookDetailsView = '/bookDetailsView';
+  static final GoRouter router = GoRouter(
     routes: <RouteBase>[
       GoRoute(
         path: '/',
@@ -15,16 +15,15 @@ abstract class AppRouter {
             const SplashView(),
       ),
       GoRoute(
-        path: homeView,
+        path: kHomeView,
         builder: (BuildContext context, GoRouterState state) =>
             const HomeView(),
       ),
       GoRoute(
-        path: bookDetailsView,
+        path: kBookDetailsView,
         builder: (BuildContext context, GoRouterState state) =>
             const BookDetailsView(),
       ),
     ],
   );
-
 }
