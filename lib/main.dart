@@ -1,6 +1,7 @@
 import 'package:booklywithcleanarchitecture/Features/splash/presention/views/splash_view.dart';
 import 'package:booklywithcleanarchitecture/core/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
@@ -14,8 +15,9 @@ class BooklyApplication extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       theme: ThemeData(
-          brightness: Brightness.dark,
-          scaffoldBackgroundColor: const Color(kPrimaryColor)),
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: const Color(kPrimaryColor),
+      ),
       debugShowCheckedModeBanner: false,
       routerConfig: _router,
     );
