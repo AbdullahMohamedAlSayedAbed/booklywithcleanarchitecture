@@ -2,6 +2,9 @@ import 'package:booklywithcleanarchitecture/Features/home/presentation/views/wid
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/custom_image.dart';
 import 'package:booklywithcleanarchitecture/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import '../books_action.dart';
 
 class SectionBookDetails extends StatelessWidget {
   const SectionBookDetails({super.key});
@@ -21,16 +24,19 @@ class SectionBookDetails extends StatelessWidget {
           style: Styles.style30,
         ),
         const SizedBox(height: 4),
-        const Opacity(
+        Opacity(
           opacity: .7,
           child: Text(
             'The Jungle Book',
-            style: Styles.style18,
+            style: Styles.style18.copyWith(
+                fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
           ),
         ),
         const BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
         ),
+        const SizedBox(height: 37),
+        const BooksAction(),
       ],
     );
   }
