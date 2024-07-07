@@ -4,6 +4,7 @@ import 'package:booklywithcleanarchitecture/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const BooklyApplication());
@@ -18,6 +19,7 @@ class BooklyApplication extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         scaffoldBackgroundColor: const Color(kPrimaryColor),
+        textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)
       ),
       debugShowCheckedModeBanner: false,
       routerConfig: _router,
