@@ -5,19 +5,16 @@ class CustomImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * .3,
-      child: AspectRatio(
-        aspectRatio: 2.7/4,
-        child: ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.amber,
-                  image:
-                      DecorationImage(image: AssetImage('assets/images/test.png'),fit: BoxFit.fill)),
-            )),
-      ),
+    return AspectRatio(
+      aspectRatio: 2.7/4,
+      child: ClipRRect(
+          borderRadius: BorderRadius.circular(12),
+          child: Container(
+            decoration: const BoxDecoration(
+              color: Colors.amber,
+                image:
+                    DecorationImage(image: AssetImage('assets/images/test.png'),fit: BoxFit.fill)),
+          )),
     );
   }
 }
