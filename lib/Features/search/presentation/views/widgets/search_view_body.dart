@@ -12,7 +12,7 @@ class SearchViewBody extends StatelessWidget {
     return Column(
       children: [
         const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30,vertical: 20),
+          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
           child: CustomTextField(),
         ),
         Expanded(

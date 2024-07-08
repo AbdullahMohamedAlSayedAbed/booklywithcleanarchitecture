@@ -4,17 +4,15 @@ import 'package:booklywithcleanarchitecture/core/error/failure.dart';
 import 'package:booklywithcleanarchitecture/core/use_cases/use_cases.dart';
 import 'package:dartz/dartz.dart';
 
-class FetchFeaturedBooksUseCase extends UseCase<List<BookEntity>,int>{
+class FetchFeaturedBooksUseCase extends UseCase<List<BookEntity>, int> {
   final HomeRepo homeRepo;
 
   FetchFeaturedBooksUseCase(this.homeRepo);
-  
+
   @override
-  Future<Either<Failure, List<BookEntity>>> call([int? param]) async{
-      //example code check permission
-      //......
-      return await homeRepo.fetchFeatureBooks();
+  Future<Either<Failure, List<BookEntity>>> call([int? param]) async {
+    //example code check permission
+    //......
+    return await homeRepo.fetchFeatureBooks();
   }
 }
-
-

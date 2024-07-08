@@ -2,7 +2,8 @@ import 'package:booklywithcleanarchitecture/Features/home/presentation/views/wid
 import 'package:flutter/material.dart';
 
 class FeaturedBooksListViewItem extends StatelessWidget {
-  const FeaturedBooksListViewItem({super.key, required this.height, this.width});
+  const FeaturedBooksListViewItem(
+      {super.key, required this.height, this.width});
   final double height;
   final double? width;
   @override
@@ -15,7 +16,7 @@ class FeaturedBooksListViewItem extends StatelessWidget {
         itemCount: 20,
         itemBuilder: (context, index) => const CustomImage(),
         separatorBuilder: (BuildContext context, _) =>
-             SizedBox(width:width?? 15),
+            SizedBox(width: width ?? 15),
       ),
     );
   }

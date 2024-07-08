@@ -10,7 +10,7 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
           enabledBorder: buildOutlineInputBorder(),
           focusedBorder: buildOutlineInputBorder(),
-          border:  buildOutlineInputBorder(),
+          border: buildOutlineInputBorder(),
           hintText: 'Search',
           hintStyle: const TextStyle(color: Colors.white),
           suffixIcon: IconButton(
@@ -24,7 +24,7 @@ class CustomTextField extends StatelessWidget {
 
   OutlineInputBorder buildOutlineInputBorder() {
     return OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(color: Colors.white));
+        borderRadius: BorderRadius.circular(12),
+        borderSide: const BorderSide(color: Colors.white));
   }
 }

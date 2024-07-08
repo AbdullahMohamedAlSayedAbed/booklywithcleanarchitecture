@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton(
-      {super.key, this.backgroundColor, this.color, this.borderRadius, this.text});
+      {super.key,
+      this.backgroundColor,
+      this.color,
+      this.borderRadius,
+      this.text});
   final Color? backgroundColor;
   final Color? color;
   final BorderRadius? borderRadius;
@@ -21,7 +25,7 @@ class CustomButton extends StatelessWidget {
           ),
           onPressed: () {},
           child: Text(
-           text?? 'Free preview',
+            text ?? 'Free preview',
             style: Styles.style18.copyWith(
                 color: color ?? Colors.black, fontWeight: FontWeight.bold),
           )),

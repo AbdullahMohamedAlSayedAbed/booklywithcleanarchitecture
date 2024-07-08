@@ -15,13 +15,12 @@ class BooklyApplication extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       theme: ThemeData(
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: const Color(kPrimaryColor),
-        textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)
-      ),
+          brightness: Brightness.dark,
+          scaffoldBackgroundColor: const Color(kPrimaryColor),
+          textTheme:
+              GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)),
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
     );
   }
 }
-
