@@ -1,8 +1,10 @@
+import 'package:booklywithcleanarchitecture/Features/home/domain/entities/book_entity.dart';
+
 import 'access_info.dart';
 import 'sale_info.dart';
 import 'volume_info.dart';
 
-class BookModel {
+class BookModel extends BookEntity {
   String? kind;
   String? id;
   String? etag;
@@ -19,7 +21,13 @@ class BookModel {
     this.volumeInfo,
     this.saleInfo,
     this.accessInfo,
-  });
+  }) : super(
+            bookId: id!,
+            image: volumeInfo?.imageLinks?.thumbnail ?? '',
+            title: volumeInfo!.title!,
+            author: volumeInfo.authors?[0] ?? 'no author',
+            price: 0.0,
+            rating: volumeInfo.pageCount!);
 
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
         kind: json['kind'] as String?,
