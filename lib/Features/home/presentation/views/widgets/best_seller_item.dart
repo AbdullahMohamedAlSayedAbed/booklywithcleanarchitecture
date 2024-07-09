@@ -1,3 +1,4 @@
+import 'package:booklywithcleanarchitecture/Features/home/domain/entities/book_entity.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/custom_image.dart';
 import 'package:booklywithcleanarchitecture/core/utils/app_router.dart';
 import 'package:booklywithcleanarchitecture/core/utils/styles.dart';
@@ -8,8 +9,8 @@ import 'package:go_router/go_router.dart';
 import 'book_rating.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key});
-
+  const BestSellerItem({super.key, required this.book});
+  final BookEntity book;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,24 +20,24 @@ class BestSellerItem extends StatelessWidget {
         height: 110,
         child: Row(
           children: [
-            const CustomImage(),
+             CustomImage(image: book.image,),
             const SizedBox(width: 30),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('Harry Potter and the Goblet of Fire',
+                   Text(book.title,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.style20),
                   const SizedBox(height: 3),
-                  const Text('J.K. Rowling',
+                   Text(book.author,
                       maxLines: 1, style: Styles.style14),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '19.99 €',
+                        '${book.price}\$',
                         style: Styles.style20
                             .copyWith(fontWeight: FontWeight.bold),
                       ),

@@ -3,9 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'best_seller_list_view.dart';
+
+import 'best_seller_list_view_bloc_builder.dart';
 import 'custom_app_bar.dart';
-import 'featured_books_list_view_item.dart';
+import 'featured_books_list_view_bloc_builder.dart';
+
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -20,9 +22,7 @@ class HomeViewBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomAppBar(),
-              FeaturedBooksListViewItem(
-                height: .3,
-              ),
+              featuredBooksListViewBlocBuilder(),
               Padding(
                 padding: EdgeInsets.only(left: 30, top: 49, bottom: 20),
                 child: Text('Best Seller', style: Styles.style18),
@@ -30,7 +30,7 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-        BestSellerListView(),
+        BestSellerListViewBlocBuilder(),
       ],
     );
   }

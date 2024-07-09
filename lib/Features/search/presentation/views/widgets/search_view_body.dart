@@ -1,4 +1,3 @@
-import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/best_seller_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -18,9 +17,10 @@ class SearchViewBody extends StatelessWidget {
         Expanded(
           child: ListView.separated(
             padding: EdgeInsets.zero,
-            itemCount: 20,
+            itemCount: 1,
             itemBuilder: (context, index) {
-              return const BestSellerItem();
+              // return const BestSellerItem();
+              return Container();
             },
             separatorBuilder: (BuildContext context, int index) =>
                 const SizedBox(height: 15),

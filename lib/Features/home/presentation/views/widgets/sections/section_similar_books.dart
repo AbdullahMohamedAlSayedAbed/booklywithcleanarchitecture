@@ -15,7 +15,7 @@ class SectionSimilarBooks extends StatelessWidget {
           child: Text('You can also like',
               style: Styles.style14.copyWith(fontWeight: FontWeight.w600)),
         ),
-        const FeaturedBooksListViewItem(height: .15, width: 10),
+        const FeaturedBooksListViewItem(height: .15, width: 10,bookEntity: [],),
         const SizedBox(height: 40),
       ],
     );
