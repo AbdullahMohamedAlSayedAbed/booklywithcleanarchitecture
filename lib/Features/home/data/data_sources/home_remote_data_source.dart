@@ -3,7 +3,6 @@ import 'package:booklywithcleanarchitecture/Features/home/domain/entities/book_e
 import 'package:booklywithcleanarchitecture/core/utils/api_service.dart';
 import 'package:booklywithcleanarchitecture/core/utils/constants.dart';
 import 'package:booklywithcleanarchitecture/core/utils/functions/save_data.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFeatureBooks();
@@ -19,7 +18,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     var data = await apiService.get(
         endPoints: 'volumes?Filtering=free-ebooks&q=subject:programming');
     List<BookEntity> books = getBookList(data);
-    saveBooksData(books, kFeaturedBok);
+    saveBooksData(books, kFeaturedBook);
     return books;
   }
 
@@ -29,6 +28,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
         endPoints:
             'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:programming');
     List<BookEntity> books = getBookList(data);
+    saveBooksData(books, kNewestBook);
     return books;
   }
 
