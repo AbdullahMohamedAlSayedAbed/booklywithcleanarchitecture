@@ -12,7 +12,7 @@ class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
     emit(FeaturedBooksLoading());
     var result = await featuredBooksUseCase.call();
     result.fold((failure) {
-      emit(FeaturedBooksFailure(failure.toString()));
+      emit(FeaturedBooksFailure(failure.errorMessage));
     }, (book) {
       emit(FeaturedBooksSuccess(book));
     });
