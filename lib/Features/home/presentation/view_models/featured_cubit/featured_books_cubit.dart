@@ -6,13 +6,22 @@ import 'package:meta/meta.dart';
 part 'featured_books_state.dart';
 
 class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
-  FeaturedBooksCubit(this._featuredBooksUseCase) : super(FeaturedBooksInitial());
+  FeaturedBooksCubit(this._featuredBooksUseCase)
+      : super(FeaturedBooksInitial());
   final FetchFeaturedBooksUseCase _featuredBooksUseCase;
-  Future<void> fetchFeaturedBooks({int pageNumber=0}) async {
-    emit(FeaturedBooksLoading());
+  Future<void> fetchFeaturedBooks({int pageNumber = 0}) async {
+    if (pageNumber == 0) {
+      emit(FeaturedBooksLoading());
+    } else {
+      emit(FeaturedBooksPaginationLoading());
+    }
     var result = await _featuredBooksUseCase.call(pageNumber);
     result.fold((failure) {
-      emit(FeaturedBooksFailure(failure.errorMessage));
+      if (pageNumber == 0) {
+        emit(FeaturedBooksFailure(failure.errorMessage));
+      } else {
+        emit(FeaturedBooksPaginationFailure(failure.errorMessage));
+      }
     }, (book) {
       emit(FeaturedBooksSuccess(book));
     });
