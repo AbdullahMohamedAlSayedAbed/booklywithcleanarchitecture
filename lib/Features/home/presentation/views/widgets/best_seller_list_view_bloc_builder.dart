@@ -1,6 +1,7 @@
 import 'package:booklywithcleanarchitecture/Features/home/domain/entities/book_entity.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/view_models/newest_cubit/newest_books_cubit.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/best_seller_list_view.dart';
+import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/best_seller_list_view_loading_indicator.dart';
 import 'package:booklywithcleanarchitecture/core/utils/functions/build_error_snack_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,11 +13,13 @@ class BestSellerListViewBlocConsumer extends StatefulWidget {
   });
 
   @override
-  State<BestSellerListViewBlocConsumer> createState() => _BestSellerListViewBlocConsumerState();
+  State<BestSellerListViewBlocConsumer> createState() =>
+      _BestSellerListViewBlocConsumerState();
 }
 
-class _BestSellerListViewBlocConsumerState extends State<BestSellerListViewBlocConsumer> {
-    List<BookEntity> books = [];
+class _BestSellerListViewBlocConsumerState
+    extends State<BestSellerListViewBlocConsumer> {
+  List<BookEntity> books = [];
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<NewestBooksCubit, NewestBooksState>(
@@ -45,8 +48,7 @@ class _BestSellerListViewBlocConsumerState extends State<BestSellerListViewBlocC
             textAlign: TextAlign.center,
           )));
         } else {
-          return const SliverToBoxAdapter(
-              child: Center(child: CircularProgressIndicator()));
+          return const BestSellerListLoadingIndicator();
         }
       },
     );
