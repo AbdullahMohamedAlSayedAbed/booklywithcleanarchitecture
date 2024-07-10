@@ -8,18 +8,18 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class featuredBooksListViewBlocConsumer extends StatefulWidget {
-  const featuredBooksListViewBlocConsumer({
+class FeaturedBooksListViewBlocConsumer extends StatefulWidget {
+  const FeaturedBooksListViewBlocConsumer({
     super.key,
   });
 
   @override
-  State<featuredBooksListViewBlocConsumer> createState() =>
-      _featuredBooksListViewBlocConsumerState();
+  State<FeaturedBooksListViewBlocConsumer> createState() =>
+      _FeaturedBooksListViewBlocConsumerState();
 }
 
-class _featuredBooksListViewBlocConsumerState
-    extends State<featuredBooksListViewBlocConsumer> {
+class _FeaturedBooksListViewBlocConsumerState
+    extends State<FeaturedBooksListViewBlocConsumer> {
   List<BookEntity> books = [];
   @override
   Widget build(BuildContext context) {

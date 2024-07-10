@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 class BestSellerListView extends StatelessWidget {
   const BestSellerListView({super.key, required this.books});
   final List<BookEntity> books;
+
   @override
   Widget build(BuildContext context) {
     return SliverList.separated(
