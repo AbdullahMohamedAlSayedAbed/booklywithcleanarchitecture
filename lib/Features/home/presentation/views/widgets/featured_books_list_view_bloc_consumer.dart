@@ -1,5 +1,6 @@
 import 'package:booklywithcleanarchitecture/Features/home/domain/entities/book_entity.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/view_models/featured_cubit/featured_books_cubit.dart';
+import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/feature_list_view_item_loading_indector.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/featured_books_list_view_item.dart';
 import 'package:booklywithcleanarchitecture/core/utils/functions/build_error_snack_bar.dart';
 import 'package:flutter/cupertino.dart';
@@ -29,7 +30,7 @@ class _featuredBooksListViewBlocConsumerState
         }
         if (state is FeaturedBooksPaginationFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
-            buildErrorFunctions(errMessage:state.errMessage),
+            buildErrorFunctions(errMessage: state.errMessage),
           );
         }
       },
@@ -44,11 +45,10 @@ class _featuredBooksListViewBlocConsumerState
         } else if (state is FeaturedBooksFailure) {
           return Text(state.errMessage);
         } else {
-          return const Center(child: CircularProgressIndicator());
+          // return const Center(child: CircularProgressIndicator());
+          return const FeaturedListViewLoadingIndicator();
         }
       },
     );
   }
-
-
 }

@@ -1,4 +1,3 @@
-import 'package:booklywithcleanarchitecture/core/utils/constants.dart';
 import 'package:booklywithcleanarchitecture/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
