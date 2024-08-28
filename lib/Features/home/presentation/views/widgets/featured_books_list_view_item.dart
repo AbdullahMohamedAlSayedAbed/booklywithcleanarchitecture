@@ -55,7 +55,8 @@ class _FeaturedBooksListViewItemState extends State<FeaturedBooksListViewItem> {
         scrollDirection: Axis.horizontal,
         itemCount: widget.bookEntity.length,
         itemBuilder: (context, index) => CustomImage(
-          image: widget.bookEntity[index].image,
+          bookEntity: widget.bookEntity[index],
+
         ),
         separatorBuilder: (BuildContext context, _) =>
             SizedBox(width: widget.width ?? 15),

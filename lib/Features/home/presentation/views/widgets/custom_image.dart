@@ -1,3 +1,4 @@
+import 'package:booklywithcleanarchitecture/Features/home/domain/entities/book_entity.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/feature_list_view_item_loading_indector.dart';
 import 'package:booklywithcleanarchitecture/core/utils/app_router.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -5,12 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomImage extends StatelessWidget {
-  const CustomImage({super.key, this.image});
-  final String? image;
+  const CustomImage({super.key, this.bookEntity});
+  // final String? image;
+  final BookEntity? bookEntity;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsView),
+      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: bookEntity),
       child: AspectRatio(
         aspectRatio: 2.7 / 4,
         child: ClipRRect(
@@ -20,7 +22,7 @@ class CustomImage extends StatelessWidget {
                 placeholder: (context, url) =>
                     const FeaturedListViewLoadingIndicator(),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
-                imageUrl: image ?? '')),
+                imageUrl: bookEntity?.image ?? '')),
       ),
     );
   }

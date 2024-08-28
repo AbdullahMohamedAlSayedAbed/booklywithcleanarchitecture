@@ -1,3 +1,4 @@
+import 'package:booklywithcleanarchitecture/Features/home/domain/entities/book_entity.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/book_details_view.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/home_view.dart';
 import 'package:booklywithcleanarchitecture/Features/search/presentation/views/search_view.dart';
@@ -24,7 +25,7 @@ abstract class AppRouter {
       GoRoute(
         path: kBookDetailsView,
         builder: (BuildContext context, GoRouterState state) =>
-            const BookDetailsView(),
+             BookDetailsView(book: state.extra as BookEntity,),
       ),
       GoRoute(
         path: kSearchView,

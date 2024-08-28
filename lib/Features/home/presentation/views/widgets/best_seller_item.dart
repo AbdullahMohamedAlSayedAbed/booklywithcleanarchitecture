@@ -14,25 +14,25 @@ class BestSellerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsView),
+      onTap: () =>
+          GoRouter.of(context).push(AppRouter.kBookDetailsView, extra: book),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         height: 110,
         child: Row(
           children: [
-             CustomImage(image: book.image,),
+            CustomImage(bookEntity: book),
             const SizedBox(width: 30),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   Text(book.title,
+                  Text(book.title,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.style20),
                   const SizedBox(height: 3),
-                   Text(book.author,
-                      maxLines: 1, style: Styles.style14),
+                  Text(book.author, maxLines: 1, style: Styles.style14),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -41,7 +41,9 @@ class BestSellerItem extends StatelessWidget {
                         style: Styles.style20
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
-                      const BookRating(),
+                      BookRating(
+                        book: book,
+                      ),
                     ],
                   )
                 ],
