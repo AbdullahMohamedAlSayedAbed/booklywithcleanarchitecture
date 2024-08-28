@@ -1,4 +1,4 @@
-import 'package:booklywithcleanarchitecture/Features/home/presentation/view_models/cubit/similar_books_cubit.dart';
+import 'package:booklywithcleanarchitecture/Features/home/presentation/view_models/similar_cubit/similar_books_cubit.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/custom_image_loading_indicator.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/featured_books_list_view_item.dart';
 import 'package:booklywithcleanarchitecture/core/utils/styles.dart';

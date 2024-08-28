@@ -11,6 +11,7 @@ Future<void> launchCustomUr(context, String? url) async {
     }
   }
   else{
+      buildErrorFunctions(errMessage: 'Url is null $url');
     print('Url is null');
   }
 }
