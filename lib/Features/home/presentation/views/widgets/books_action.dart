@@ -1,4 +1,5 @@
 import 'package:booklywithcleanarchitecture/Features/home/domain/entities/book_entity.dart';
+import 'package:booklywithcleanarchitecture/core/utils/functions/launch_url.dart';
 import 'package:booklywithcleanarchitecture/core/widgets/custom_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,15 +15,19 @@ class BooksAction extends StatelessWidget {
         children: [
           Expanded(
               child: CustomButton(
+            onPressed: () => launchCustomUr(context, book.previewLink),
             text: '${book.price.toString()} \$',
             backgroundColor: Colors.white,
             borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(12), topLeft: Radius.circular(12)),
           )),
-          const Expanded(
+          Expanded(
               child: CustomButton(
+            onPressed: () {
+              launchCustomUr(context, book.previewLink);
+            },
             color: Colors.white,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
                 bottomRight: Radius.circular(12),
                 topRight: Radius.circular(12)),
           )),
