@@ -1,5 +1,4 @@
 import 'package:booklywithcleanarchitecture/Features/home/data/repos/home_repo_impl.dart';
-import 'package:booklywithcleanarchitecture/Features/home/presentation/view_models/similar_cubit/similar_books_cubit.dart';
 import 'package:booklywithcleanarchitecture/core/utils/functions/setup_service_locator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,5 @@
 import 'package:booklywithcleanarchitecture/Features/home/data/repos/home_repo_impl.dart';
 import 'package:booklywithcleanarchitecture/Features/home/domain/entities/book_entity.dart';
-import 'package:booklywithcleanarchitecture/Features/home/presentation/view_models/similar_cubit/similar_books_cubit.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/book_details_view.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/home_view.dart';
 import 'package:booklywithcleanarchitecture/Features/search/presentation/views/search_view.dart';
@@ -9,6 +8,8 @@ import 'package:booklywithcleanarchitecture/core/utils/functions/setup_service_l
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../Features/home/presentation/view_models/cubit/similar_books_cubit.dart';
 
 abstract class AppRouter {
   static const kHomeView = '/homeView';
