@@ -1,6 +1,11 @@
+import 'package:booklywithcleanarchitecture/Features/home/presentation/view_models/similar_cubit/similar_books_cubit.dart';
+import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/custom_image_loading_indicator.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/featured_books_list_view_item.dart';
 import 'package:booklywithcleanarchitecture/core/utils/styles.dart';
+import 'package:booklywithcleanarchitecture/core/widgets/custom_fading_widget.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SectionSimilarBooks extends StatelessWidget {
   const SectionSimilarBooks({super.key});
@@ -15,9 +20,36 @@ class SectionSimilarBooks extends StatelessWidget {
           child: Text('You can also like',
               style: Styles.style14.copyWith(fontWeight: FontWeight.w600)),
         ),
-        const FeaturedBooksListViewItem(height: .15, width: 10,bookEntity: [],),
+        const SimilarBooksBlocBuilder(),
         const SizedBox(height: 40),
       ],
+    );
+  }
+}
+
+class SimilarBooksBlocBuilder extends StatelessWidget {
+  const SimilarBooksBlocBuilder({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<SimilarBooksCubit, SimilarBooksState>(
+      builder: (context, state) {
+        if (state is SimilarBooksSuccess) {
+          return FeaturedBooksListViewItem(
+            height: .15,
+            width: 10,
+            bookEntity: state.books,
+          );
+        } else if (state is SimilarBooksFailure) {
+          return Text(state.errMessage);
+        } else {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+      },
     );
   }
 }
