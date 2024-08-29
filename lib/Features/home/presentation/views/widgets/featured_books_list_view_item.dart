@@ -1,15 +1,17 @@
 import 'package:booklywithcleanarchitecture/Features/home/domain/entities/book_entity.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/view_models/featured_cubit/featured_books_cubit.dart';
+import 'package:booklywithcleanarchitecture/Features/home/presentation/view_models/similar_cubit/similar_books_cubit.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/custom_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FeaturedBooksListViewItem extends StatefulWidget {
   const FeaturedBooksListViewItem(
-      {super.key, required this.height, this.width, required this.bookEntity});
+      {super.key, required this.height, this.width, required this.bookEntity, required this.isSimilar});
   final double height;
   final double? width;
   final List<BookEntity> bookEntity;
+  final bool isSimilar;
 
   @override
   State<FeaturedBooksListViewItem> createState() =>
@@ -32,8 +34,10 @@ class _FeaturedBooksListViewItemState extends State<FeaturedBooksListViewItem> {
         0.7 * _scrollController.position.maxScrollExtent) {
       if (!isLoading) {
         isLoading = true;
+        if (!widget.isSimilar) {
         await BlocProvider.of<FeaturedBooksCubit>(context)
             .fetchFeaturedBooks(pageNumber: nextPage++);
+        }
         isLoading = false;
       }
     }
@@ -56,7 +60,6 @@ class _FeaturedBooksListViewItemState extends State<FeaturedBooksListViewItem> {
         itemCount: widget.bookEntity.length,
         itemBuilder: (context, index) => CustomImage(
           bookEntity: widget.bookEntity[index],
-
         ),
         separatorBuilder: (BuildContext context, _) =>
             SizedBox(width: widget.width ?? 15),

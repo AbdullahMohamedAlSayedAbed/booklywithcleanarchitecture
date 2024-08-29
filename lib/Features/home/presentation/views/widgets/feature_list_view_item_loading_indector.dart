@@ -3,12 +3,12 @@ import 'package:booklywithcleanarchitecture/core/widgets/custom_fading_widget.da
 import 'package:flutter/material.dart';
 
 class FeaturedListViewLoadingIndicator extends StatelessWidget {
-  const FeaturedListViewLoadingIndicator({super.key});
-
+  const FeaturedListViewLoadingIndicator({super.key, this.height=.3});
+  final double? height;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * .3,
+      height: MediaQuery.of(context).size.height * height!,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: 10,

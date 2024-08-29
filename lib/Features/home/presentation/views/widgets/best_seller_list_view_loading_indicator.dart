@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'best_seller_item_loading.dart';
+
 class BestSellerListLoadingIndicator extends StatelessWidget {
   const BestSellerListLoadingIndicator({super.key});
 
@@ -12,56 +14,8 @@ class BestSellerListLoadingIndicator extends StatelessWidget {
     return SliverList.separated(
         itemCount: 10,
         itemBuilder: (context, index) {
-          return const BestItemLoading();
+          return const BestSellerItemLoading();
         },
         separatorBuilder: (context, index) => const SizedBox(height: 20));
-  }
-}
-
-class BestItemLoading extends StatelessWidget {
-  const BestItemLoading({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      height: 110,
-      child: Row(
-        children: [
-          const CustomFadingWidget(child: CustomBookImageLoadingIndicator()),
-          const SizedBox(width: 30),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: CustomFadingWidget(
-                    child: boxLoading(),
-                  ),
-                ),
-                const SizedBox(height: 3),
-                Expanded(
-                  child: CustomFadingWidget(
-                    child: boxLoading(),
-                  ),
-                ),
-                const SizedBox(height: 3),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  AspectRatio boxLoading() {
-    return AspectRatio(
-        aspectRatio: 5,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(12),
-          child: Container(
-            color: Colors.grey[50],
-          ),
-        ));
   }
 }

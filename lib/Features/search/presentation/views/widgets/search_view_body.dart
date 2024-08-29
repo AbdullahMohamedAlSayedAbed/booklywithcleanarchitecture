@@ -54,7 +54,8 @@ class SearchListViewBlocBuilder extends StatelessWidget {
             ),
           );
         } else if (state is SearchBooksFailure) {
-          return buildErrorFunctions(errMessage: state.errMessage);
+          buildErrorFunctions(errMessage: state.errMessage);
+          return  const SizedBox();
         } else {
           return const SizedBox();
         }

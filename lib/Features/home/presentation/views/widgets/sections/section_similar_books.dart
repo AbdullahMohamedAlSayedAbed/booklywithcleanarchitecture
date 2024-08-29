@@ -7,6 +7,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../similar_books_bloc_builder.dart';
+
 class SectionSimilarBooks extends StatelessWidget {
   const SectionSimilarBooks({super.key});
 
@@ -23,33 +25,6 @@ class SectionSimilarBooks extends StatelessWidget {
         const SimilarBooksBlocBuilder(),
         const SizedBox(height: 40),
       ],
-    );
-  }
-}
-
-class SimilarBooksBlocBuilder extends StatelessWidget {
-  const SimilarBooksBlocBuilder({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<SimilarBooksCubit, SimilarBooksState>(
-      builder: (context, state) {
-        if (state is SimilarBooksSuccess) {
-          return FeaturedBooksListViewItem(
-            height: .15,
-            width: 10,
-            bookEntity: state.books,
-          );
-        } else if (state is SimilarBooksFailure) {
-          return Text(state.errMessage);
-        } else {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        }
-      },
     );
   }
 }

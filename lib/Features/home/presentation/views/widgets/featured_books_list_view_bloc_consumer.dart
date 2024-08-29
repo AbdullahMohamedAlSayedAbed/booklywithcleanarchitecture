@@ -39,6 +39,7 @@ class _FeaturedBooksListViewBlocConsumerState
             state is FeaturedBooksPaginationLoading ||
             state is FeaturedBooksPaginationFailure) {
           return FeaturedBooksListViewItem(
+            isSimilar: false,
             bookEntity: books,
             height: .3,
           );
