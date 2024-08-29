@@ -1,4 +1,5 @@
 import 'package:booklywithcleanarchitecture/core/utils/functions/build_error_snack_bar.dart';
+import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 Future<void> launchCustomUr(context, String? url) async {
@@ -7,11 +8,14 @@ Future<void> launchCustomUr(context, String? url) async {
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
     } else {
-      buildErrorFunctions(errMessage: 'Cannot launch $url');
+      ScaffoldMessenger.of(context)
+          .showSnackBar(
+            
+            buildErrorFunctions(errMessage: 'Cannot launch $url'));
     }
-  }
-  else{
-      buildErrorFunctions(errMessage: 'Url is null $url');
+  } else {
+    ScaffoldMessenger.of(context)
+        .showSnackBar(buildErrorFunctions(errMessage: 'Url is null $url'));
     print('Url is null');
   }
 }

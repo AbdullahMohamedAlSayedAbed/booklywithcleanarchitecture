@@ -1,6 +1,5 @@
 import 'package:booklywithcleanarchitecture/Features/home/domain/entities/book_entity.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/view_models/featured_cubit/featured_books_cubit.dart';
-import 'package:booklywithcleanarchitecture/Features/home/presentation/view_models/similar_cubit/similar_books_cubit.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/custom_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
