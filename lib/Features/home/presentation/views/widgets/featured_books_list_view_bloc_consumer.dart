@@ -3,7 +3,6 @@ import 'package:booklywithcleanarchitecture/Features/home/presentation/view_mode
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/feature_list_view_item_loading_indector.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/featured_books_list_view_item.dart';
 import 'package:booklywithcleanarchitecture/core/utils/functions/build_error_snack_bar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';

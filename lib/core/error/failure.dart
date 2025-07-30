@@ -35,8 +35,6 @@ class ServerFailure extends Failure {
       case DioExceptionType.unknown:
         return ServerFailure(
             "An unexpected error occurred. Please try again later.");
-      default:
-        return ServerFailure("There was an error. Please try again later.");
     }
   }
   factory ServerFailure.fromResponse(int? statusCode, dynamic response) {

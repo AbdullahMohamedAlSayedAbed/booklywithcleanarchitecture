@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class slidingTextWidget extends StatelessWidget {
-  const slidingTextWidget({
+class SlidingTextWidget extends StatelessWidget {
+  const SlidingTextWidget({
     super.key,
     required this.slidingAnimation,
     required this.animationController,

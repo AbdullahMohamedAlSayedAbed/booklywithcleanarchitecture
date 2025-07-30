@@ -9,13 +9,11 @@ Future<void> launchCustomUr(context, String? url) async {
       await launchUrl(uri);
     } else {
       ScaffoldMessenger.of(context)
-          .showSnackBar(
-            
-            buildErrorFunctions(errMessage: 'Cannot launch $url'));
+          .showSnackBar(buildErrorFunctions(errMessage: 'Cannot launch $url'));
     }
   } else {
     ScaffoldMessenger.of(context)
         .showSnackBar(buildErrorFunctions(errMessage: 'Url is null $url'));
-    print('Url is null');
+    // print('Url is null');
   }
 }

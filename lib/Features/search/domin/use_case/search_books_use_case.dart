@@ -10,9 +10,9 @@ class SearchBooksUseCase extends UseCase<List<BookEntity>, String> {
   SearchBooksUseCase(this.searchRepo);
 
   @override
-  Future<Either<Failure, List<BookEntity>>> call([String searchBook = '']) async {
+  Future<Either<Failure, List<BookEntity>>> call([String param = '']) async {
     //example code check permission
     //......
-    return await searchRepo.searchBooks(searchBook: searchBook);
+    return await searchRepo.searchBooks(searchBook: param);
   }
 }

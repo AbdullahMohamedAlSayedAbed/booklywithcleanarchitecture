@@ -3,7 +3,6 @@ import 'package:booklywithcleanarchitecture/Features/home/presentation/view_mode
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/best_seller_list_view.dart';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/best_seller_list_view_loading_indicator.dart';
 import 'package:booklywithcleanarchitecture/core/utils/functions/build_error_snack_bar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -40,7 +39,7 @@ class _BestSellerListViewBlocConsumerState
             books: books,
           );
         } else if (state is NewestBooksFailure) {
-          print('error ::::: ${state.errMessage}');
+          // print('error ::::: ${state.errMessage}');
           return SliverToBoxAdapter(
               child: Center(
                   child: Text(

@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:booklywithcleanarchitecture/Features/home/domain/entities/book_entity.dart';
@@ -18,10 +17,5 @@ class SimilarBooksCubit extends Cubit<SimilarBooksState> {
     }, (book) {
       emit(SimilarBooksSuccess(book));
     });
-  }
-  @override
-  void onChange(Change<SimilarBooksState> change) {
-    // TODO: implement onChange
-    super.onChange(change);
   }
 }

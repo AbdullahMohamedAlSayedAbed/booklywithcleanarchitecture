@@ -1,4 +1,4 @@
-import 'dart:developer';
+// import 'dart:developer';
 import 'package:booklywithcleanarchitecture/Features/home/presentation/views/widgets/best_seller_item.dart';
 import 'package:booklywithcleanarchitecture/Features/search/presentation/view_model/search_books_cubit/search_books_cubit.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +28,7 @@ class SearchListViewBlocBuilder extends StatelessWidget {
             ),
           );
         } else if (state is SearchBooksFailure) {
-          log(state.errMessage);
+          // log(state.errMessage);
           return const Center(child: Text('there is no results'));
         } else {
           return const Padding(

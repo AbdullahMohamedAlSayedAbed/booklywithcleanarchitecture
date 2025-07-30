@@ -1,8 +1,6 @@
 import 'package:booklywithcleanarchitecture/Features/home/presentation/view_models/newest_cubit/newest_books_cubit.dart';
 import 'package:booklywithcleanarchitecture/core/utils/styles.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,6 +1,5 @@
 import 'package:booklywithcleanarchitecture/core/utils/app_router.dart';
 import 'package:booklywithcleanarchitecture/core/utils/assets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
@@ -39,7 +38,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       children: [
         Image.asset(AssetsDate.logo),
         const SizedBox(height: 4),
-        slidingTextWidget(
+        SlidingTextWidget(
             slidingAnimation: slidingAnimation,
             animationController: animationController),
       ],
@@ -59,7 +58,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
     return Future.delayed(
       const Duration(seconds: 2),
       () {
-        GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
+        if (mounted) {
+          GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
+        }
       },
     );
   }
