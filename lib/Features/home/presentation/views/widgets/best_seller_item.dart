@@ -27,12 +27,20 @@ class BestSellerItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(book.title,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: Styles.style20),
+                  FittedBox(
+                    // fit: BoxFit.scaleDown,
+                    alignment: Alignment.centerLeft,
+                    child: Text(book.title ?? "there is no title",
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: Styles.style20),
+                  ),
                   const SizedBox(height: 3),
-                  Text(book.author, maxLines: 1, style: Styles.style14),
+                  FittedBox(
+                    alignment: Alignment.centerLeft,
+                    // fit: BoxFit.scaleDown,
+                    child: Text(book.author ?? "there is no author", maxLines: 1, style: Styles.style14)),
+                  const Spacer(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

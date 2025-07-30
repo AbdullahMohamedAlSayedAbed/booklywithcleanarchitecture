@@ -28,7 +28,9 @@ class BookModel extends BookEntity {
             author: volumeInfo.authors?[0] ?? 'no author',
             previewLink: volumeInfo.previewLink,
             price: 0.0,
-            rating: volumeInfo.pageCount!);
+            rating: volumeInfo.pageCount!,
+            categories: volumeInfo.categories
+            );
 
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
         kind: json['kind'] as String?,

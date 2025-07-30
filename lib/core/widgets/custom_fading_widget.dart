@@ -1,39 +1,40 @@
 import 'package:flutter/cupertino.dart';
-
 class CustomFadingWidget extends StatefulWidget {
   const CustomFadingWidget({super.key, required this.child});
   final Widget child;
+
   @override
   State<CustomFadingWidget> createState() => _CustomFadingWidgetState();
 }
 
 class _CustomFadingWidgetState extends State<CustomFadingWidget>
     with SingleTickerProviderStateMixin {
-  late Animation animation;
-  late AnimationController animationController;
+  late final AnimationController _controller;
+  late final Animation<double> _fadeAnimation;
+
   @override
   void initState() {
-    animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 700));
-    animation = Tween<double>(begin: .2, end: .8).animate(animationController);
-    animationController.addListener(() {
-      setState(() {});
-    });
-    animationController.repeat(reverse: true);
     super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 700),
+    )..repeat(reverse: true);
+
+    _fadeAnimation = Tween<double>(begin: 0.2, end: 0.8).animate(_controller);
   }
 
   @override
   void dispose() {
-    animationController.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Opacity(
-      opacity: animation.value,
+    return FadeTransition(
+      opacity: _fadeAnimation,
       child: widget.child,
     );
   }
 }
+

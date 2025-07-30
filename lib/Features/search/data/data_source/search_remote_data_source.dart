@@ -13,16 +13,17 @@ class SearchRemoteDataSourceImpl implements SearchRemoteDataSource {
   @override
   Future<List<BookEntity>> searchBooks({required String searchBook}) async {
     var data = await apiService.get(
-        endPoints:
-            'volumes?Filtering=free-ebooks&q=subject:${searchBook}');
+        endPoints: 'volumes?Filtering=free-ebooks&q=intitle:$searchBook');
     List<BookEntity> books = getBookList(data);
     return books;
   }
 
   List<BookEntity> getBookList(Map<String, dynamic> data) {
     List<BookEntity> books = [];
-    for (var book in data['items']) {
-      books.add(BookModel.fromJson(book));
+    if (data['items'] != null && data['items'] is List) {
+      for (var book in data['items']) {
+        books.add(BookModel.fromJson(book));
+      }
     }
     return books;
   }

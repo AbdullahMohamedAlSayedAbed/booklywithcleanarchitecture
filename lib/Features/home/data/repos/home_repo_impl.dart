@@ -55,7 +55,7 @@ class HomeRepoImpl extends HomeRepo {
   Future<Either<Failure, List<BookEntity>>> fetchSimilarBooks({required String category}) async{
       try {
       List<BookEntity> book;
-      book = await homeRemoteDataSource.fetchSimilarBooks();
+      book = await homeRemoteDataSource.fetchSimilarBooks(categories: category);
       return right(book);
     } catch (e) {
       if (e is DioException) {

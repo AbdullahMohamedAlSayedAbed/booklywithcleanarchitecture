@@ -1,5 +1,3 @@
-
-
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
@@ -12,19 +10,18 @@ part 'similar_books_state.dart';
 class SimilarBooksCubit extends Cubit<SimilarBooksState> {
   SimilarBooksCubit(this.homeRepo) : super(SimilarBooksInitial());
   final HomeRepo homeRepo;
-  Future<void> fetchSimilarBooks() async {
+  Future<void> fetchSimilarBooks({required String categories}) async {
     emit(SimilarBooksLoading());
-    var result = await homeRepo.fetchSimilarBooks(category: '');
+    var result = await homeRepo.fetchSimilarBooks(category: categories);
     result.fold((failure) {
       emit(SimilarBooksFailure(failure.errorMessage));
     }, (book) {
       emit(SimilarBooksSuccess(book));
     });
   }
-
   @override
   void onChange(Change<SimilarBooksState> change) {
-    log(change.toString());
+    // TODO: implement onChange
     super.onChange(change);
   }
 }

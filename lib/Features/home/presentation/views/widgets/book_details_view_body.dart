@@ -32,7 +32,9 @@ class BookDetailsViewBody extends StatelessWidget {
                       height: 50,
                     ),
                   ),
-                  const SectionSimilarBooks(),
+                  SectionSimilarBooks(
+                    book: book,
+                  ),
                 ],
               ),
             )

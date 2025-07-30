@@ -29,9 +29,12 @@ class SearchListViewBlocBuilder extends StatelessWidget {
           );
         } else if (state is SearchBooksFailure) {
           log(state.errMessage);
-          return const SizedBox();
+          return const Center(child: Text('there is no results'));
         } else {
-          return const SizedBox();
+          return const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: LinearProgressIndicator(),
+          );
         }
       },
     );

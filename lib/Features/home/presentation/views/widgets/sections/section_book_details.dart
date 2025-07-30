@@ -17,11 +17,13 @@ class SectionBookDetails extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(
               horizontal: MediaQuery.sizeOf(context).width * .18),
-          child:  CustomImage(bookEntity: book,),
+          child: CustomImage(
+            bookEntity: book,
+          ),
         ),
         const SizedBox(height: 40),
-         Text(
-          book.title,
+        Text(
+          book.title ?? '',
           style: Styles.style30,
           textAlign: TextAlign.center,
         ),
@@ -29,17 +31,19 @@ class SectionBookDetails extends StatelessWidget {
         Opacity(
           opacity: .7,
           child: Text(
-            book.author,
+            book.author ?? '',
             style: Styles.style18.copyWith(
                 fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
           ),
         ),
-         BookRating(
+        BookRating(
           book: book,
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         const SizedBox(height: 37),
-         BooksAction(book: book,),
+        BooksAction(
+          book: book,
+        ),
       ],
     );
   }

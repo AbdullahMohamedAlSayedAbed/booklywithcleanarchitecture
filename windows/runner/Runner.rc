@@ -92,7 +92,7 @@ BEGIN
             VALUE "CompanyName", "com.example" "\0"
             VALUE "FileDescription", "booklywithcleanarchitecture" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "booklywithcleanarchitecture" "\0"
+            VALUE "InternalName", "com.example.freebooks" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
             VALUE "OriginalFilename", "booklywithcleanarchitecture.exe" "\0"
             VALUE "ProductName", "booklywithcleanarchitecture" "\0"

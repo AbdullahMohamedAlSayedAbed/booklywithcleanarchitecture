@@ -44,7 +44,7 @@ class _FeaturedBooksListViewBlocConsumerState
             height: .3,
           );
         } else if (state is FeaturedBooksFailure) {
-          return Text(state.errMessage);
+          return Center(child: Text(state.errMessage));
         } else {
           // return const Center(child: CircularProgressIndicator());
           return const FeaturedListViewLoadingIndicator();

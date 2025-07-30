@@ -8,19 +8,23 @@ class BookEntity {
   @HiveField(1)
   final String? image;
   @HiveField(2)
-  final String title;
+  final String? title;
   @HiveField(3)
-  final String author;
+  final String? author;
   @HiveField(4)
   final num? price;
   @HiveField(5)
   final num? rating;
   final String? previewLink;
+  final List<String>? categories;
+
   const BookEntity(
-      {this.previewLink, required this.bookId,
+      {this.previewLink,
+      required this.bookId,
       this.image,
-      required this.title,
-      required this.author,
+      this.categories,
+      this.title,
+      this.author,
       this.price,
       this.rating});
 }
